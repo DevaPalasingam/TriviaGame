@@ -33,4 +33,7 @@
 		-Remove buttons: removes all the buttons
 		-Create buttons: creates all the buttons with answer choices
 
+	-answerScreen:
+		-checks if unanswered, correct, or wrong, then updates the counters
+
 	-checkAnswer:

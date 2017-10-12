@@ -74,7 +74,7 @@ function displayTimer() {
 	countDown--;
 	console.log(countDown);
 
-	if (countDown === 0) {
+	if (countDown < 0) {
 		clearInterval(oneSecond);
 		answerScreen(false, false);
 	}
@@ -103,6 +103,23 @@ function newQuestion() {
 
 function answerScreen (correct, answered) {
 	$ ("#buttonDiv").empty();
+	if (answered === false) {
+		unanswered++;
+		$ ("#row2").text("Time's up: " + questionArray[questionCount].answer);
+	}
+	else if (correct === true) {
+		correctCount++;
+		$ ("#row2").text("Correct: " + questionArray[questionCount].answer);
+	}
+	else if (correct === false) {
+		wrongCount++;
+		$ ("#row2").text("Wrong: " + questionArray[questionCount].answer);
+	}
+	console.log("unanswered: " + unanswered);
+	console.log("correctCount: " + correctCount);
+	console.log("wrongCount: " + wrongCount);
+	$ ("#buttonDiv").append($ ("<img>").attr("class", "img-responsive"));
+	$ (".img-responsive").attr("src",questionArray[questionCount].image);
 }
 
 function checkAnswer (answerChoice) {
