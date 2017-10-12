@@ -22,6 +22,12 @@ body {
 	margin-top: 10%;	
 }
 
+#row1, #row2 {
+	color: white;
+	font-size: 40px;
+	margin-bottom: 20px;
+}
+
 .btn-group-vertical {
 	width: 100%;
 	max-width: 600px;

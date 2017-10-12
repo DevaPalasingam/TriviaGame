@@ -1,7 +1,7 @@
 -Start screen (1 row)
 	-start button
 	
--Question screen (6 rows)
+-Question screen (3 rows)
 	-answer choices
 	-countdown timer
 -Correct/Wrong Screen (3 rows)

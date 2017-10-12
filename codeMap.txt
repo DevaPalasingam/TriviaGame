@@ -1,3 +1,36 @@
--Start button: this code happens when the start button is pushed
-	-Remove buttons: removes all the buttons
-	-Create buttons: creates all the buttons with answer choices
+-Objects and variables
+	-questionObject:holds question, answer choices, image associated with answer, answer to question
+
+	-questionArray: an array that holds each of the questionObjects
+
+	-questionCount: index that says which object in questionArray we are at
+
+	-buttonObject: object that holds type and class of a button element so we can add it to HTML 
+
+	-countDown: 15 seconds per question
+	-gameStart: tells whether or not the game has started
+
+	-oneSecond: variable that will call displayTimer every second
+
+	-correctCount: counts correct answers
+	-wrongCount: counts wrong answers
+	-unanswered: counts unanswered questions
+
+
+-Click button: this code happens when a button is pushed
+	-if the game hasn't started then it'll call newQuestion()
+	-otherwise it'll call checkAnswer
+
+
+-Functions
+	-displayTimer: 
+		-displays a timer in row1
+		-decrements countDown
+
+	-newQuestion:
+		-Create timer: calls displayTimer every second
+		-Add queston: adds the current question
+		-Remove buttons: removes all the buttons
+		-Create buttons: creates all the buttons with answer choices
+
+	-checkAnswer:

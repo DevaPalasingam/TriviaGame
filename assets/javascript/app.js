@@ -1,3 +1,5 @@
+
+//Objects and variables=======================================
 function questionObject(question, choice1, choice2, choice3, choice4, image, answer) {
 	this.question = question;
 	this.choice1 = choice1;
@@ -27,16 +29,65 @@ var questionArray = [question1, question2, question3, question4, question5, ques
 
 var questionCount = 0;
 
+
 var buttonObject = {
 	type: "button",
-	class: "btn btn-block"
+	class: "btn btn-block button2"
 };
 
-// Start button==============================================
-$ ("#startButton").on("click", function() {
-	console.log("start button has been clicked");
-	
 
+var countDown = 15;
+var gameStart = false;
+
+var oneSecond;
+
+var correctCount = 0;
+var wrongCount = 0;
+var unanswered = 0;
+//Objects and variables=======================================
+
+
+
+
+// Click button==============================================
+$ (document).on("click", ".btn", function() {
+	console.log("a button has been clicked");
+	var userClick = $ (this).text();
+	console.log(userClick);
+	
+	if (gameStart !== true) {
+		gameStart = true;
+		newQuestion();
+	}
+	else {
+		checkAnswer(userClick);
+	}
+
+});
+// Click button===============================================
+
+
+
+//Functions===================================================
+function displayTimer() {
+	$ ("#row1").text(countDown);
+	countDown--;
+	console.log(countDown);
+
+	if (countDown === 0) {
+		clearInterval(oneSecond)
+		answerScreen(false, false);
+	}
+
+}
+
+function newQuestion() {
+	//Create timer
+	displayTimer();
+	oneSecond = setInterval(displayTimer, 1000 * 1);
+
+	//Add question
+	$ ("#row2").text(questionArray[questionCount].question);
 
 	// Remove buttons
 	$ ("#buttonDiv").empty();
@@ -48,6 +99,25 @@ $ ("#startButton").on("click", function() {
 	$ ("#buttonDiv").append($("<button>", buttonObject).text(questionArray[questionCount].choice3));
 	$ ("#buttonDiv").append($("<button>", buttonObject).text(questionArray[questionCount].choice4));
 	//Create buttons========================================
+}
 
-});
-// Start button===============================================
+function answerScreen (correct, answered) {
+	
+}
+
+function checkAnswer (answerChoice) {
+	var rightPick;
+
+	if (answerChoice === questionArray[questionCount].answer) {
+		console.log("correct");
+		rightPick = true;
+	}
+	else {
+		console.log("wrong");
+		rightPick = false
+	}
+
+	answerScreen (rightPick, true);
+}
+
+//Functions===================================================
