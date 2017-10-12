@@ -55,7 +55,7 @@ $ (document).on("click", ".btn", function() {
 	var userClick = $ (this).text();
 	console.log(userClick);
 	
-	if (gameStart !== true) {
+	if (gameStart === false) {
 		gameStart = true;
 		newQuestion();
 	}
@@ -75,7 +75,7 @@ function displayTimer() {
 	console.log(countDown);
 
 	if (countDown === 0) {
-		clearInterval(oneSecond)
+		clearInterval(oneSecond);
 		answerScreen(false, false);
 	}
 
@@ -102,11 +102,12 @@ function newQuestion() {
 }
 
 function answerScreen (correct, answered) {
-	
+	$ ("#buttonDiv").empty();
 }
 
 function checkAnswer (answerChoice) {
 	var rightPick;
+	clearInterval(oneSecond);
 
 	if (answerChoice === questionArray[questionCount].answer) {
 		console.log("correct");
