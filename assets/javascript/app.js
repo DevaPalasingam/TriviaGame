@@ -8,6 +8,7 @@ function questionObject(question, choice1, choice2, choice3, choice4, image, ans
 	this.answer = answer;
 }
 
+
 var question1 = new questionObject("What is Earth's largest continent?", "Asia", "Africa", "Antactica", "Europe", "assets/images/asia.jpg", "Asia");
 
 var question2 = new questionObject("What razor-thin country accounts for more than half of the western coastline of South America?", "Bolivia", "Ecuador", "Peru", "Chile", "assets/images/chile.png", "Chile");
@@ -19,3 +20,17 @@ var question4 = new questionObject("What country has the most natural lakes?", "
 var question5 = new questionObject("What is the only sea without any coasts?", "Mediterranean Sea", "Sargasso Sea", "Adriatic Sea", "Celebes Sea", "assets/images/sargasso.jpg", "Sargasso Sea");
 
 var question6 = new questionObject("What percentage of the River Nile is located in Egypt?", "22%", "83%", "100%", "9%", "assets/images/nile.jpg", "22%");
+
+
+var buttonObject = {
+	type: "button",
+	class: "btn btn-block"
+};
+
+
+$ ("#startButton").on("click", function() {
+	console.log("start button has been clicked");
+
+
+
+});

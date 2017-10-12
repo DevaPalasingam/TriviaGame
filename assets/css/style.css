@@ -13,10 +13,6 @@ body {
 	background-image: url(../images/ep_naturalblack/ep_naturalblack/ep_naturalblack.png)
 }
 
-#startButton {
-	font-size: 50px;
-}
-
 .container {
 	width: 100%;
 	padding-left: 30px;
@@ -33,4 +29,5 @@ body {
 
 .btn {
 	height: 80px;
+	font-size: 50px;
 }
