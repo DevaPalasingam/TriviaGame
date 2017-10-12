@@ -20,6 +20,8 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 2%;	
+	padding-bottom: 20px;
+	max-height: 100%;
 }
 
 #row1, #row2 {

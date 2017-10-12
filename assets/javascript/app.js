@@ -69,6 +69,27 @@ $ (document).on("click", ".btn", function() {
 
 
 //Functions===================================================
+function gameOver() {
+	gameStart = false;
+	$ ("#row1").empty();
+	$ ("#row2").empty();
+	$ ("#buttonDiv").empty();
+
+	$ ("#row1").text("Game Over");
+	$ ("#row1").append("<br>Correct: " + correctCount);
+	$ ("#row1").append("<br>Wrong: " + wrongCount);
+	$ ("#row1").append("<br>Unanswered: " + unanswered);
+
+	correctCount = 0;
+	wrongCount = 0;
+	unanswered = 0;
+	questionCount = 0;
+
+	$ ("#buttonDiv").append($("<button>", buttonObject).text("Try again"));
+
+
+}
+
 function displayTimer() {
 	$ ("#row1").text(countDown);
 	countDown--;
@@ -81,8 +102,24 @@ function displayTimer() {
 
 }
 
+function twoSeconds() {
+	countDown--;
+	console.log(countDown);
+	if (countDown < 0) {
+		clearInterval(oneSecond);
+		questionCount++;
+		newQuestion();
+	}
+}
+
 function newQuestion() {
+	if (questionCount === questionArray.length) {
+		gameOver();
+		return;
+	}
+
 	//Create timer
+	countDown = 15;
 	displayTimer();
 	oneSecond = setInterval(displayTimer, 1000 * 1);
 
@@ -102,6 +139,7 @@ function newQuestion() {
 }
 
 function answerScreen (correct, answered) {
+
 	$ ("#buttonDiv").empty();
 	if (answered === false) {
 		unanswered++;
@@ -120,6 +158,11 @@ function answerScreen (correct, answered) {
 	console.log("wrongCount: " + wrongCount);
 	$ ("#buttonDiv").append($ ("<img>").attr("class", "img-responsive"));
 	$ (".img-responsive").attr("src",questionArray[questionCount].image);
+
+	countDown = 2;
+	oneSecond = setInterval(twoSeconds, 1000 * 1);
+	twoSeconds();
+
 }
 
 function checkAnswer (answerChoice) {

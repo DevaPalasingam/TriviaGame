@@ -23,9 +23,16 @@
 
 
 -Functions
+	-gameOver:
+		-displays score
+		-creates button to start over
+
 	-displayTimer: 
 		-displays a timer in row1
 		-decrements countDown
+
+	-twoSeconds:
+		-waits two seconds then calls newQuestion
 
 	-newQuestion:
 		-Create timer: calls displayTimer every second
@@ -34,6 +41,8 @@
 		-Create buttons: creates all the buttons with answer choices
 
 	-answerScreen:
-		-checks if unanswered, correct, or wrong, then updates the counters
+		-checks if unanswered, correct, or wrong, then updates the counters and tells answer
+		-calls twoSeconds
 
 	-checkAnswer:
+		-calls answerScreen and tells it if the answer is correct or wrong
