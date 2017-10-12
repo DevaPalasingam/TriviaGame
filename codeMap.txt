@@ -1,0 +1,3 @@
+-Start button: this code happens when the start button is pushed
+	-Remove buttons: removes all the buttons
+	-Create buttons: creates all the buttons with answer choices

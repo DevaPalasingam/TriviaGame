@@ -21,16 +21,33 @@ var question5 = new questionObject("What is the only sea without any coasts?", "
 
 var question6 = new questionObject("What percentage of the River Nile is located in Egypt?", "22%", "83%", "100%", "9%", "assets/images/nile.jpg", "22%");
 
+var question7 = new questionObject("What is the driest place on Earth?", "Atacama Desert", "Sahara Desert", "Kufra, Libya", "McMurdo, Antarctica", "assets/images/mcmurdo.jpg", "McMurdo, Antarctica")
+
+var questionArray = [question1, question2, question3, question4, question5, question6, question7];
+
+var questionCount = 0;
 
 var buttonObject = {
 	type: "button",
 	class: "btn btn-block"
 };
 
-
+// Start button==============================================
 $ ("#startButton").on("click", function() {
 	console.log("start button has been clicked");
+	
 
 
+	// Remove buttons
+	$ ("#buttonDiv").empty();
+
+	
+	//Create buttons=========================================
+	$ ("#buttonDiv").append($("<button>", buttonObject).text(questionArray[questionCount].choice1));
+	$ ("#buttonDiv").append($("<button>", buttonObject).text(questionArray[questionCount].choice2));
+	$ ("#buttonDiv").append($("<button>", buttonObject).text(questionArray[questionCount].choice3));
+	$ ("#buttonDiv").append($("<button>", buttonObject).text(questionArray[questionCount].choice4));
+	//Create buttons========================================
 
 });
+// Start button===============================================
