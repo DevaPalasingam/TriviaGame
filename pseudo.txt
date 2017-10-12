@@ -1,0 +1,74 @@
+-Start screen (1 row)
+	-start button
+	
+-Question screen (6 rows)
+	-answer choices
+	-countdown timer
+-Correct/Wrong Screen (3 rows)
+	-short timer to next screen
+-Final Screen (6 rows)
+	-startover button, but does not refresh the page
+
+
+Keep track of:
+-correct answers
+-wrong answers
+-unanswered
+
+
+
+Question class
+-question
+-answer choice 1
+-answer choice 2
+-answer choice 3
+-answer choice 4
+-picture related to question
+-correct answer
+
+
+
+Geography questions
+
+
+What is Earth's largest continent?
+Asia - correct
+Africa 
+Antactica
+Europe
+
+What razor-thin country accounts for more than half of the western coastline of South America?
+Bolivia
+Ecuador
+Peru
+Chile - correct
+
+What river runs through Baghdad?
+Tigris - correct
+Karun
+Jordan
+Euphrates
+
+What country has the most natural lakes?
+United States
+Australia
+India
+Canada - correct
+
+What is the only sea without any coasts?
+Mediterranean Sea
+Sargasso Sea - correct
+Adriatic Sea
+Celebes Sea
+
+What percentage of the River Nile is located in Egypt?
+22% - correct
+83%
+100%
+9%
+
+What is the driest place on Earth?
+Atacama Desert
+Sahara Desert
+Kufra, Libya
+McMurdo, Antarctica - correct
